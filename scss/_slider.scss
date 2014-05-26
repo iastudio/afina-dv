@@ -1,0 +1,170 @@
+#slider {
+	height: 331px;
+	background: url('../i/slider-bg.png') 0 0 repeat-x $blue-color;
+	margin: 0;
+	overflow: hidden;
+
+	#slide-1 {
+
+		.slide-image {
+			//background-position: 0 -316px;
+		}
+
+		.left {
+			margin-top: 9px;
+		}
+	}
+
+	#slide-2 {
+		
+		.slide-image {
+			//background-position: 0 -632px;
+		}
+
+		.left {
+			margin-top: 17px;
+		}
+		.right {
+			margin-top: 27px;
+		}
+	}
+
+	#slide-3 {
+
+		.slide-image {
+			//background-position: 0 -948px;
+		}
+
+		.left {
+			margin-top: 15px;
+		}
+		.right {
+			margin-top: 20px;
+		}
+	}
+
+	#slide-4 {
+
+		.slide-image {
+			//background-position: 0 -1264px;
+		}
+
+		.left {
+			margin-top: 30px;
+		}
+		.right {
+			margin-top: 27px;
+		}
+	}
+
+	#slide-5 {
+
+		.slide-image {
+			//background-position: 0 -1580px;
+		}
+
+		.left {
+			margin-top: 8px;
+		}
+	}
+
+	#slide-6 {
+
+		.slide-image {
+			//background-position: 0 -1896px;
+		}
+
+		.left {
+			margin-top: 8px;
+		}
+	}
+
+	h1, p {
+		color: #fff;
+	}
+
+	h1 {
+		font-size: 50px;
+		line-height: 85%;
+		font-weight: bold;
+
+
+		/* Chrome trail fix */
+		padding-left:2px; padding-right:2px;
+	}
+
+	p {
+		font-size: 15px;
+		line-height: 120%;
+	}
+
+	.col-6 {
+		padding-top: 30px;
+
+		&.left {
+			cursor: pointer;
+		}
+
+		&.right {
+			display: none;
+			opacity: 0;
+		}
+	}
+
+	.slide-image {
+		width: 1200px;
+		height: 320px;
+		position: absolute;
+		top: 0px;
+		right: -700px;
+		//background: url('../i/slides.png') 0 0 no-repeat;
+	}
+
+	.container {
+		position: relative;
+	}
+
+	.slide {
+
+		position: absolute;
+		left: 0;
+
+		span {
+			text-decoration: underline;
+			// display: block;
+			// width: 100%;
+			margin-left: 15px;
+			//text-align: right;
+		}
+
+		.col-6.left {//, .slide-image {
+			opacity: 0;
+		}
+		
+		// .slide-image {
+		// 	right: inherit;
+		// }
+
+		.container {
+			z-index: 0;
+		}
+
+		&.active .container {
+			z-index: 1;
+		}
+
+		&.active {
+			.col-6.left, .slide-image {
+				opacity: 1;
+			}
+		}
+	}
+
+	@for $i from 1 through 6 {
+		#slide-#{$i} {
+			.slide-image {
+				background: url('../i/slide-#{$i}.png') 0 0 no-repeat;
+			}
+		}
+	}
+}
